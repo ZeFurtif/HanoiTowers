@@ -53,16 +53,15 @@ class Visualisation_hanoi:
     def algo(self, n, a, c, b):
         if n == 1:
             self.move(a, c)
-            self.mise_a_jour()
             return
-        self.algo(int(n-1), a, b, c)
+        self.algo(n-1, a, b, c)
         self.move(a, c)
         self.algo(n-1, b, c, a)
 
 
 
 h = [[],[],[]]
-v = Visualisation_hanoi(h, 9)
+v = Visualisation_hanoi(h, 4)
 v.create()
 v.algo(v.n, 0, 2, 1)
 v.mise_a_jour()
