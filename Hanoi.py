@@ -1,6 +1,6 @@
 import tkinter as tk
 import time
-clrs = ["#008080", "#20B2AA", "#008000", "#00FF00", "#ADFF2F", "#FFFF00", "#FF8C00", "#FF4500","#FF0000"]
+clrs = ["#20B2AA", "#008080", "#008000", "#00FF00", "#ADFF2F", "#FFFF00", "#FF8C00", "#FF4500","#FF0000"]
 class Visualisation_hanoi:
     def __init__(self, hanoi, n):
         self.n = n
@@ -34,7 +34,7 @@ class Visualisation_hanoi:
         for i in range(len(self.hanoi)):
             centre=[135,405,665]
             for j in range(len(self.hanoi[i])):
-                self.monCanvas.create_rectangle(centre[i]-10-10*self.hanoi[i][j],498-20*j,centre[i]+10+10*self.hanoi[i][j],502-20*j-20,fill=clrs[self.hanoi[i][j]+1])
+                self.monCanvas.create_rectangle(centre[i]-10-10*self.hanoi[i][j],498-20*j,centre[i]+10+10*self.hanoi[i][j],502-20*j-20,fill=clrs[self.hanoi[i][j]-1])
         self.visu.update()
 
     def create(self):
@@ -62,7 +62,7 @@ class Visualisation_hanoi:
 
 
 h = [[],[],[]]
-v = Visualisation_hanoi(h, 6)
+v = Visualisation_hanoi(h, 9)
 v.create()
 v.algo(v.n, 0, 2, 1)
 v.mise_a_jour()
